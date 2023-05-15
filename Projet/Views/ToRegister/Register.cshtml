@@ -1,0 +1,55 @@
+﻿@model User
+@if (TempData["message"] is not null)
+{
+    <div class="alert alert-success">
+        <h2>@TempData["Message"]</h2>
+    </div>
+}
+<form method="post" asp-action="Register">
+    <table>
+        <tr>
+            <td><label asp-for="Firstname"></label></td>
+            <td><input asp-for="Firstname" /></td>
+            <td><span asp-validation-for="Firstname" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Lastname"></label></td>
+            <td><input asp-for="Lastname" /></td>
+            <td><span asp-validation-for="Lastname" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Street_name"></label></td>
+            <td><input asp-for="Street_name" /></td>
+            <td><span asp-validation-for="Street_name" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="House_number"></label></td>
+            <td><input asp-for="House_number" /></td>
+            <td><span asp-validation-for="House_number" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Postal_code"></label></td>
+            <td><input asp-for="Postal_code" /></td>
+            <td><span asp-validation-for="Postal_code" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="City"></label></td>
+            <td><input asp-for="City" /></td>
+            <td><span asp-validation-for="City" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Email"></label></td>
+            <td><input asp-for="Email" /></td>
+            <td><span asp-validation-for="Email" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Password"></label></td>
+            <td><input asp-for="Password" /></td>
+            <td><span asp-validation-for="Password" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td> <input type="submit" /></td>
+        </tr>
+       
+    </table>
+</form>

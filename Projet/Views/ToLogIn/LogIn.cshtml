@@ -1,0 +1,22 @@
+﻿@model User
+@if (ViewBag.message is not null)
+{
+    @ViewBag.message
+}
+<form method="get" asp-action="LogIn">
+    <table>
+        <tr>
+            <td><label asp-for="Email"></label></td>
+            <td><input asp-for="Email" /></td>
+            <td><span asp-validation-for="Email" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Password"></label></td>
+            <td><input asp-for="Password" /></td>
+            <td><span asp-validation-for="Password" class="text-danger"></span></td>
+        </tr>
+
+    </table>
+    <input type="submit" />
+    <a asp-action="Register" asp-controller="ToRegister">To register</a>
+</form>

@@ -1,0 +1,23 @@
+﻿@model Car
+@if(TempData["message"]is not null){
+    <div class="alert alert-success">
+        <h2>@TempData["Message"]</h2>
+    </div>
+}
+<form method="post" asp-action="AddCar">
+    <table>
+        <tr> 
+            <td><label asp-for="ModelName"></label></td>
+            <td><input asp-for="ModelName" /></td>
+            <td><span asp-validation-for="ModelName" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="NbrPlaces"></label></td>
+            <td><input asp-for="NbrPlaces" /></td>
+            <td><span asp-validation-for="NbrPlaces" class="text-danger"></span></td>
+        </tr>
+        
+    </table>
+    <input type="submit" />
+    <a asp-action="Save" asp-controller="ToRegister">Don't add car.</a>
+</form>
