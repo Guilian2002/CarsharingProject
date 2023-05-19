@@ -1,0 +1,6 @@
+﻿@model List<Car>
+@foreach ( Car c in @Model){
+    <p>
+        Car model : @c.ModelName, seat @c.NbrPlaces <a asp-action="SaveCar" asp-controller="ToOfferCarsharing" asp-route-name="@c.ModelName" asp-route-seats="@c.NbrPlaces"> Select</a>
+    </p>
+}

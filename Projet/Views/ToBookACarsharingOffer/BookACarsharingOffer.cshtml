@@ -1,0 +1,50 @@
+﻿@model List<CarsharingOffer>
+@if (TempData["messageOffre"] is not null)
+{
+	<div class="alert alert-success">
+		<h2>@TempData["messageOffre"]</h2>
+	</div>
+}
+@if(Model is null)
+{
+	<p>There are currently no offers to book.</p>
+}
+else
+{
+	<table>
+		<tr>
+			<th>Car</th>
+			<th>Driver</th>
+			<th>Passengers</th>
+			<th>Cities</th>
+		</tr>
+		@foreach (CarsharingOffer offer in @Model)
+		{
+			<tr>
+				<td>@offer.Car.ModelName, @offer.Car.NbrPlaces</td>
+			</tr>
+			<tr>
+				<td>@offer.Driver.Lastname, @offer.Driver.Firstname</td>
+			</tr>
+			@foreach (var passengers in offer.Passengers)
+			{
+				<tr>
+					<td>@passengers.Lastname, @passengers.Firstname</td>
+				</tr>
+			}
+			@foreach (var cities in offer.Citys)
+			{
+				<tr>
+					<td>@cities.Name</td><br />
+				</tr>
+			}
+			<tr>
+				<form method="post" asp-action="BookAnOffer">
+					<input type = "hidden" value="@offer">
+				<td><input type="submit" value="Book" /></td><br />
+				</form>
+			</tr>
+		}
+	</table>
+}
+<a asp-action="Index" asp-controller="Home">Back</a>

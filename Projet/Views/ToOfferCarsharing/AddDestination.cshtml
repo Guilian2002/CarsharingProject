@@ -1,0 +1,22 @@
+﻿@model City
+@if (ViewData["message"] is not null)
+{
+    @ViewData["Message"]
+}
+<form method="post" asp-action="AddCar">
+    <table>
+        <tr>
+            <td><label asp-for="Name"></label></td>
+            <td><input asp-for="Name" /></td>
+            <td><span asp-validation-for="Name" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="PassageHour"></label></td>
+            <td><input asp-for="PassageHour" /></td>
+            <td><span asp-validation-for="PassageHour" class="text-danger"></span></td>
+        </tr>
+
+    </table>
+    <input type="submit" />
+    <a asp-action="Save" asp-controller="ToOfferCarsharing">Don't add passage citys.</a>
+</form>

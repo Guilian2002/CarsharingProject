@@ -1,0 +1,4 @@
+﻿@model List<CarsharingRequest>
+@foreach (var v in Model) {
+    <p>@v.Passenger.Lastname @v.Passenger.Firstname has requested a carsharing from @v.Departure.Name to @v.Arrival.Name on @v.Date</p>
+}

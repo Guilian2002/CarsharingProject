@@ -1,0 +1,15 @@
+﻿@model List<CarsharingOffer>
+<table>
+@foreach (CarsharingOffer offer in @Model)
+{
+	@foreach (var cities in offer.Citys)
+	{
+		<tr>
+			<td>@cities.Name</td><br />
+			<td>@cities.PassageHour</td> <br />
+		</tr>
+	}
+}
+</table>
+<a asp-action="RequestACarsharing" asp-controller="ToRequestACarsharing">Request a carsharing</a><br />
+<a asp-action="Index" asp-controller="Home">Back</a>

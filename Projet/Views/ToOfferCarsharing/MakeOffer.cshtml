@@ -1,0 +1,37 @@
+﻿@model CarsharingOffer
+@if (ViewData["message"] is not null)
+{
+    @ViewData["Message"]
+}
+<form method="post" asp-action="MakeOffer">
+    <table>
+        <tr>
+            <td><label asp-for="Arrival.Name"></label></td>
+            <td><input asp-for="Arrival.Name" /></td>
+            <td><span asp-validation-for="Arrival.Name" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Arrival.PassageHour"></label></td>
+            <td><input asp-for="Arrival.PassageHour" /></td>
+            <td><span asp-validation-for="Arrival.PassageHour" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Departure.Name"></label></td>
+            <td><input asp-for="Departure.Name" /></td>
+            <td><span asp-validation-for="Departure.Name" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Departure.PassageHour"></label></td>
+            <td><input asp-for="Departure.PassageHour" /></td>
+            <td><span asp-validation-for="Departure.PassageHour" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Date"></label></td>
+            <td><input asp-for="Date" /></td>
+            <td><span asp-validation-for="Date" class="text-danger"></span></td>
+        </tr>
+
+    </table>
+    <input type="submit" />
+    
+</form>

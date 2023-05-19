@@ -1,0 +1,25 @@
+﻿@model CarsharingRequest
+@if (TempData["message"] is not null)
+{
+            <div class="alert alert-success">
+                <h2>@TempData["Message"]</h2>
+            </div>
+}
+<form method="post" asp-action="RequestACarsharing">
+    <table>
+        <tr> 
+            <td>Arrival</td>
+            <td><label asp-for="Arrival.Name"></label></td>
+            <td><input asp-for="Arrival.Name" /></td>
+            <td><span asp-validation-for="Arrival.Name" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Departure</td>
+            <td><label asp-for="Departure.Name"></label></td>
+            <td><input asp-for="Departure.Name" /></td>
+            <td><span asp-validation-for="Departure.Name" class="text-danger"></span></td>
+        </tr>
+    </table>
+    <a asp-action="Index" asp-controller="Home">Back</a>
+    <input type="submit" />
+</form>

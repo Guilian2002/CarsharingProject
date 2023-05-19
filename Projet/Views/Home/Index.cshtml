@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<center>
+    <h1> Welcome To Carsharing.be</h1> <br />
+    @if (ViewData["connected"] is null)
+    {
+        <a asp-action="Register" asp-controller="ToRegister">To register</a> <br />
+        <a asp-action="LogIn" asp-controller="ToLogIn">To log in</a> <br />
+    }
+    else
+    {
+        <a asp-action="BookACarsharingOffer" asp-controller="ToBookACarsharingOffer">Book a carsharing offer</a><br />
+        <a asp-action="RequestACarsharing" asp-controller="ToRequestACarsharing">Request a carsharing</a><br />
+        <a asp-action="LookForACarsharingOffer" asp-controller="ToLookForACarsharingOffer">Seek a carsharing offer</a><br />
+        <a asp-action="DisplayCar" asp-controller="ToOfferCarsharing"> Offer Carsharing</a><br />
+        <a asp-action="LogOut" asp-controller="ToLogOut">log out</a><br />
+    }
+    <a asp-action="ConsultRequest" asp-controller="ToConsultCarsharingRequest">To consult carsharing request</a> <br />
+</center>
